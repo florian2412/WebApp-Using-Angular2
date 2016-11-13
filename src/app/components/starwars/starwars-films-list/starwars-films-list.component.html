@@ -1,0 +1,28 @@
+<div class="mdl-color--white mdl-grid mdl-shadow--4dp">
+
+  <div class="mdl-card__title">
+
+    <h3 class="">Films</h3>
+
+  </div>
+
+  <div class="mdl-card__supporting-text">
+
+    <!-- Characters list -->
+    <ul class="mdl-list">
+
+      <li *ngFor="let film of films">{{ film.title }}</li>
+
+    </ul>
+
+  </div>
+
+  <div class="mdl-card__actions mdl-card--border">
+
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="getFilms()">
+      Get Films !
+    </a>
+
+  </div>
+
+</div>

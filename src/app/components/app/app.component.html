@@ -1,0 +1,121 @@
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <!-- HEADER/TOOLBAR -->
+  <header class="mdl-layout__header">
+
+    <div class="mdl-layout__header-row">
+
+      <!-- Title -->
+      <span class="mdl-layout-title">[Sample WebApp in progress] Angular2 with Star Wars API, Pokemon API and Material Design Lite</span>
+
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+
+      <!-- Navigation. We hide it in small screens. -->
+      <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <a class="mdl-navigation__link" href="" [routerLink]="['/starwars']">Star Wars</a>
+        <a class="mdl-navigation__link" href="" [routerLink]="['/pokemon']">Pokemon</a>
+        <a class="mdl-navigation__link" href="" [routerLink]="['/about']">A propos</a>
+        <a class="mdl-navigation__link" href="" [routerLink]="['/contact']">Contact</a>
+      </nav>
+
+    </div>
+
+  </header>
+
+  <!-- SMALL SCREEN MENU -->
+  <div class="mdl-layout__drawer">
+
+    <span class="mdl-layout-title">[Sample WebApp in progress]</span>
+
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">Star Wars</a>
+      <a class="mdl-navigation__link" href="">Pokemon</a>
+      <a class="mdl-navigation__link" href="">A propos</a>
+      <a class="mdl-navigation__link" href="">Contact</a>
+    </nav>
+
+  </div>
+
+
+
+
+  <!-- SIDE NAV MENU PANEL -->
+  <div class="mdl-layout__drawer mdl-color--blue-grey-100 mdl-color-text--black">
+
+    <header class="">
+
+      <!--
+      <div class="demo-avatar-dropdown">
+
+        <span>sample.webapp@example.com</span>
+
+        <div class="mdl-layout-spacer"></div>
+
+        <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+          <i class="material-icons" role="presentation">arrow_drop_down</i>
+          <span class="visuallyhidden">Accounts</span>
+        </button>
+
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+          <li class="mdl-menu__item">sample.webapp@example.com</li>
+          <li class="mdl-menu__item">webapp.sample@example.com</li>
+
+          <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+
+        </ul>
+
+      </div>
+      -->
+
+    </header>
+
+    <nav class="mdl-navigation mdl-color--blue-grey-100">
+
+      <a class="mdl-navigation__link" href="" [routerLink]="['/starwars']"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">star</i>Star Wars</a>
+      <a class="mdl-navigation__link" href="" [routerLink]="['/pokemon']"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">star</i>Pokemon</a>
+
+      <a class="mdl-navigation__link" href="" [routerLink]="['/contact']"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">star</i>Contact</a>
+      <a class="mdl-navigation__link" href="" [routerLink]="['/about']"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">star</i>A propos</a>
+
+<!--      <div class="mdl-layout-spacer"></div>-->
+
+    </nav>
+
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main class="mdl-layout__content mdl-color--grey-100">
+
+    <router-outlet></router-outlet>
+    <!-- the component's template will be inserted here-->
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="mdl-mini-footer">
+
+    <div class="mdl-mini-footer__left-section">
+
+      <ul class="mdl-mini-footer__link-list">
+        <li><a href="" [routerLink]="['/']">Accueil</a></li>
+        <li><a href="" [routerLink]="['/starwars']">Star Wars</a></li>
+        <li><a href="" [routerLink]="['/pokemon']">Pokemon</a></li>
+        <li><a href="" [routerLink]="['/contact']">Contact</a></li>
+        <li><a href="" [routerLink]="['/about']">A propos</a></li>
+      </ul>
+
+    </div>
+
+  </footer>
+
+</div>
+
+<!--
+  <li><a href="" [routerLink]="['/starwars']">Star Wars</a></li>
+</nav>-->
+
+

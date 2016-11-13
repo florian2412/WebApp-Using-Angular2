@@ -7,8 +7,8 @@ describe('angular2-sample-2 App', function() {
     page = new Angular2Sample2Page();
   });
 
-  it('should display message saying app works', () => {
+  it('should display message saying components works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('components works!');
   });
 });
