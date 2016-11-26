@@ -19,10 +19,10 @@ export class StarwarsVehiclesListComponent implements OnInit {
 
   private getVehicles() {
     return this.swapiService
-      .getResourceList(StarWarsResourcesEnum.VEHICLES)
-      .subscribe(response => {
-          this.vehicles = response;
-        },
+      .getResourceListByRessourceEnum(StarWarsResourcesEnum.VEHICLES)
+      .subscribe(
+        response => this.vehicles = response,
+        error => this.swapiService.handleError,
         () => console.log('Done')
       );
   }

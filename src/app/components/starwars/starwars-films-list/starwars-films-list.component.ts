@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { StarWarsResourcesEnum } from "../../../resources/starwars.resource.enum";
 import { SwapiService } from "../../../services/swapi/swapi.service";
 import {FilmModel} from "../../../model/starwars/film.model";
+import {Observable} from "rxjs";
+import {errorHandler} from "@angular/platform-browser/src/browser";
 
 @Component({
   selector: 'app-starwars-films-list',
@@ -19,10 +21,10 @@ export class StarwarsFilmsListComponent implements OnInit {
 
   private getFilms() {
     return this.swapiService
-      .getResourceList(StarWarsResourcesEnum.FILMS)
-      .subscribe(response => {
-          this.films = response;
-        },
+      .getResourceListByRessourceEnum(StarWarsResourcesEnum.FILMS)
+      .subscribe(
+        response => this.films = response,
+        error => this.swapiService.handleError,
         () => console.log('Done')
       );
   }

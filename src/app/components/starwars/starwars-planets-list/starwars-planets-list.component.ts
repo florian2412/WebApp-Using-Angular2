@@ -19,10 +19,10 @@ export class StarwarsPlanetsListComponent implements OnInit {
 
   private getPlanets() {
     return this.swapiService
-      .getResourceList(StarWarsResourcesEnum.PLANETS)
-      .subscribe(response => {
-          this.planets = response;
-        },
+      .getResourceListByRessourceEnum(StarWarsResourcesEnum.PLANETS)
+      .subscribe(
+        response =>  this.planets = response,
+        error => this.swapiService.handleError,
         () => console.log('Done')
       );
   }

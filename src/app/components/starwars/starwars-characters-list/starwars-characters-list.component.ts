@@ -20,9 +20,10 @@ export class StarwarsCharactersListComponent implements OnInit {
 
   private getCharacters() {
     return this.swapiService
-      .getResourceList(StarWarsResourcesEnum.PEOPLE)
+      .getResourceListByRessourceEnum(StarWarsResourcesEnum.PEOPLE)
       .subscribe(
         response => this.characters = response,
+        error => this.swapiService.handleError,
         () => console.log('Done')
       );
   }

@@ -19,10 +19,10 @@ export class StarwarsSpeciesListComponent implements OnInit {
 
   private getSpecies() {
     return this.swapiService
-      .getResourceList(StarWarsResourcesEnum.SPECIES)
-      .subscribe(response => {
-          this.species = response;
-        },
+      .getResourceListByRessourceEnum(StarWarsResourcesEnum.SPECIES)
+      .subscribe(
+        response => this.species = response,
+        error => this.swapiService.handleError,
         () => console.log('Done')
       );
   }
