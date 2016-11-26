@@ -17,7 +17,15 @@ export class SwapiService {
     return this.http
       .get(completeUrl)
       .map(response => response.json())
-      .map(response => response.results)
+      .map(response => response)
+      .catch(this.handleError);
+  }
+
+  public getRessourceListByNextURL(url: string) : Observable<any> {
+    return this.http
+      .get(url)
+      .map(response => response.json())
+      .map(response => response)
       .catch(this.handleError);
   }
 
