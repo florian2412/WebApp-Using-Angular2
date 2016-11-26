@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './components/app/app.component';
-import { AngularFireModule } from "angularfire2";
-import { MyFirebaseConfig } from '../firebase.config';
 import { HomeComponent } from "./components/home/home.component";
 import { ROUTES } from "./app.routes";
 import { ContactComponent} from "./components/contact/contact.component";
@@ -19,8 +17,6 @@ import { StarwarsSpeciesListComponent } from './components/starwars/starwars-spe
 import { StarwarsVehiclesListComponent } from './components/starwars/starwars-vehicles-list/starwars-vehicles-list.component';
 import { StarwarsStarshipsListComponent } from './components/starwars/starwars-starships-list/starwars-starships-list.component';
 import { SwapiService } from "./services/swapi/swapi.service";
-
-
 
 @NgModule({
   declarations: [
@@ -41,7 +37,6 @@ import { SwapiService } from "./services/swapi/swapi.service";
     BrowserModule,
     FormsModule,
     HttpModule,
-    AngularFireModule.initializeApp(MyFirebaseConfig),
     RouterModule.forRoot(ROUTES),
   ],
   providers: [ SwapiService ],
