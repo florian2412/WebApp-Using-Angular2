@@ -21,9 +21,8 @@ export class StarwarsCharactersListComponent implements OnInit {
   private getCharacters() {
     return this.swapiService
       .getResourceList(StarWarsResourcesEnum.PEOPLE)
-      .subscribe(response => {
-          this.characters = response;
-        },
+      .subscribe(
+        response => this.characters = response,
         () => console.log('Done')
       );
   }
