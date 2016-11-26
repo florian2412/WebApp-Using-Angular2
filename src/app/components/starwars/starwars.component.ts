@@ -12,4 +12,8 @@ export class StarwarsComponent implements OnInit {
   ngOnInit() {
   }
 
+  private backToHome() {
+
+  }
+
 }
