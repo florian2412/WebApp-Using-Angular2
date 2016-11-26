@@ -12,7 +12,9 @@ import { StarWarsResourcesEnum } from "../../../resources/starwars.resource.enum
 
 export class StarwarsCharactersListComponent implements OnInit {
 
-  private characters: Array<CharacterModel>;
+  private characters: Array<CharacterModel> = new Array();
+  private next: any = null;
+  private previous: any = null;
 
   constructor(private swapiService: SwapiService) {}
 
@@ -22,10 +24,31 @@ export class StarwarsCharactersListComponent implements OnInit {
     return this.swapiService
       .getResourceListByRessourceEnum(StarWarsResourcesEnum.PEOPLE)
       .subscribe(
-        response => this.characters = response,
+        response => this.managerResponse(response),
         error => this.swapiService.handleError,
         () => console.log('Done')
       );
+  }
+
+  private managerResponse(response: any) {
+    this.characters = response.results;
+    this.next = response.next;
+    this.previous = response.previous;
+  }
+
+  private updateList(url: string) {
+    return this.swapiService
+      .getRessourceListByNextURL(url)
+      .subscribe(
+        response => this.managerResponse(response),
+        error => this.swapiService.handleError,
+        () => console.log('Done')
+      );
+  }
+
+
+  private showDetails(character) {
+    console.log(character);
   }
 
 }

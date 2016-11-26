@@ -12,7 +12,7 @@ import {errorHandler} from "@angular/platform-browser/src/browser";
 })
 export class StarwarsFilmsListComponent implements OnInit {
 
-  private films: Array<FilmModel>;
+  private films: Array<FilmModel> = new Array();
 
   constructor(private swapiService: SwapiService) { }
 
@@ -23,10 +23,15 @@ export class StarwarsFilmsListComponent implements OnInit {
     return this.swapiService
       .getResourceListByRessourceEnum(StarWarsResourcesEnum.FILMS)
       .subscribe(
-        response => this.films = response,
+        response => this.films = response.results,
         error => this.swapiService.handleError,
         () => console.log('Done')
       );
+  }
+
+
+  private showDetails(film) {
+    console.log(film);
   }
 
 }

@@ -6,12 +6,20 @@
 
   </div>
 
-  <div class="mdl-card__supporting-text">
+  <div class="mdl-card__supporting-text"
+       *ngIf="films.length > 0">
 
     <!-- Characters list -->
     <ul class="mdl-list">
 
-      <li *ngFor="let film of films">{{ film.title }}</li>
+      <li *ngFor="let film of films">
+
+        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+           (click)="showDetails(film)">
+          {{ film.title }}
+        </a>
+
+      </li>
 
     </ul>
 

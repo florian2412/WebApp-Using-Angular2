@@ -10,7 +10,7 @@ import {SwapiService} from "../../../services/swapi/swapi.service";
 })
 export class StarwarsSpeciesListComponent implements OnInit {
 
-  private species: Array<SpecieModel>;
+  private species: Array<SpecieModel> = new Array();
 
   constructor(private swapiService: SwapiService) { }
 
@@ -21,10 +21,14 @@ export class StarwarsSpeciesListComponent implements OnInit {
     return this.swapiService
       .getResourceListByRessourceEnum(StarWarsResourcesEnum.SPECIES)
       .subscribe(
-        response => this.species = response,
+        response => this.species = response.results,
         error => this.swapiService.handleError,
         () => console.log('Done')
       );
+  }
+
+  private showDetails(specie) {
+    console.log(specie);
   }
 
 }

@@ -6,12 +6,18 @@
 
   </div>
 
-  <div class="mdl-card__supporting-text">
+  <div class="mdl-card__supporting-text"
+       *ngIf="starships.length > 0">
 
     <!-- Characters list -->
     <ul class="mdl-list">
 
-      <li *ngFor="let starship of starships">{{ starship.name }}</li>
+      <li *ngFor="let starship of starships">
+        <a class="mdl-button mdl-button--colored mdl-js-ripple-effect"
+           (click)="showDetails(starship)">
+          {{ starship.name }}
+        </a>
+      </li>
 
     </ul>
 

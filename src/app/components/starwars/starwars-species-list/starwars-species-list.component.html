@@ -6,12 +6,20 @@
 
   </div>
 
-  <div class="mdl-card__supporting-text">
+  <div class="mdl-card__supporting-text"
+       *ngIf="species.length > 0">
 
     <!-- Characters list -->
     <ul class="mdl-list">
 
-      <li *ngFor="let specie of species">{{ specie.name }}</li>
+      <li *ngFor="let specie of species">
+
+        <a class="mdl-button mdl-button--colored mdl-js-ripple-effect"
+           (click)="showDetails(specie)">
+          {{ specie.name }}
+        </a>
+
+      </li>
 
     </ul>
 

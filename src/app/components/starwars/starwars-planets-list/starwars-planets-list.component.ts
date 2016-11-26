@@ -10,7 +10,7 @@ import {StarWarsResourcesEnum} from "../../../resources/starwars.resource.enum";
 })
 export class StarwarsPlanetsListComponent implements OnInit {
 
-  private planets: Array<PlanetModel>;
+  private planets: Array<PlanetModel> = new Array();
 
   constructor(private swapiService: SwapiService) { }
 
@@ -21,10 +21,14 @@ export class StarwarsPlanetsListComponent implements OnInit {
     return this.swapiService
       .getResourceListByRessourceEnum(StarWarsResourcesEnum.PLANETS)
       .subscribe(
-        response =>  this.planets = response,
+        response =>  this.planets = response.results,
         error => this.swapiService.handleError,
         () => console.log('Done')
       );
+  }
+
+  private showDetails(planet) {
+    console.log(planet);
   }
 
 }
