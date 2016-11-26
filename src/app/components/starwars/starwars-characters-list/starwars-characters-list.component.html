@@ -32,27 +32,7 @@
   <div class="mdl-card__actions mdl-card--border"
        *ngIf="characters.length > 1">
 
-    <div class="mdl-grid">
-
-      <!-- previous is not null -->
-      <div class="mdl-cell mdl-cell--6-col"
-           *ngIf="previous !== null">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-           (click)="updateList(previous)">
-          Previous
-        </a>
-      </div>
-
-      <!-- next is not null -->
-      <div class="mdl-cell mdl-cell--6-col"
-           *ngIf="next !== null">
-        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
-           (click)="updateList(next)">
-          Next
-        </a>
-      </div>
-
-    </div>
+    <app-starwars-footer-card-list></app-starwars-footer-card-list>
 
   </div>
 

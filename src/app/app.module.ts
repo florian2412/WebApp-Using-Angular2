@@ -17,6 +17,7 @@ import { StarwarsSpeciesListComponent } from './components/starwars/starwars-spe
 import { StarwarsVehiclesListComponent } from './components/starwars/starwars-vehicles-list/starwars-vehicles-list.component';
 import { StarwarsStarshipsListComponent } from './components/starwars/starwars-starships-list/starwars-starships-list.component';
 import { SwapiService } from "./services/swapi/swapi.service";
+import { StarwarsFooterCardListComponent } from './components/starwars/starwars-footer-card-list/starwars-footer-card-list.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SwapiService } from "./services/swapi/swapi.service";
     StarwarsPlanetsListComponent,
     StarwarsSpeciesListComponent,
     StarwarsVehiclesListComponent,
-    StarwarsStarshipsListComponent
+    StarwarsStarshipsListComponent,
+    StarwarsFooterCardListComponent
   ],
   imports: [
     BrowserModule,
