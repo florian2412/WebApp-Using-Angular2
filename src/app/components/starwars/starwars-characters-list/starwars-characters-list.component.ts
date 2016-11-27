@@ -17,9 +17,9 @@ export class StarwarsCharactersListComponent implements OnInit {
   private next: any = null;
   private previous: any = null;
 
-  constructor(private swapiService: SwapiService) {}
+  constructor(private swapiService: SwapiService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   private getCharacters() {
     return this.swapiService

@@ -1,33 +1,36 @@
 <div class="mdl-color--white mdl-grid mdl-shadow--4dp">
 
   <div class="mdl-card__title">
-
     <h3 class="">Planets</h3>
-
   </div>
 
   <div class="mdl-card__supporting-text"
        *ngIf="planets.length > 0">
 
-    <!-- Characters list -->
+    <!-- Planets list -->
     <ul class="mdl-list">
-
       <li *ngFor="let planet of planets">
         <a class="mdl-button mdl-button--colored mdl-js-ripple-effect"
            (click)="showDetails(planet)">
           {{ planet.name }}
         </a>
       </li>
-
     </ul>
 
   </div>
 
-  <div class="mdl-card__actions mdl-card--border">
-
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" (click)="getPlanets()">
-      Get Films !
+  <div class="mdl-card__actions mdl-card--border"
+       *ngIf="planets.length < 1">
+    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+       (click)="getPlanets()">
+      Get Planets !
     </a>
+  </div>
+
+  <div class="mdl-card__actions mdl-card--border"
+       *ngIf="planets.length >= 1">
+
+    <app-starwars-footer-card-list [previous]="previous" [next]="next" (selected)="updateList($event)"></app-starwars-footer-card-list>
 
   </div>
 

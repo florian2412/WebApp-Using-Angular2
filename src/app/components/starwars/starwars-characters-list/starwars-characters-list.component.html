@@ -19,7 +19,6 @@
 
   </div>
 
-  <!-- Characters.length === 0 -->
   <div class="mdl-card__actions mdl-card--border"
        *ngIf="characters.length < 1">
     <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
@@ -28,11 +27,10 @@
     </a>
   </div>
 
-  <!-- Characters.length > 0 -->
   <div class="mdl-card__actions mdl-card--border"
        *ngIf="characters.length > 1">
 
-    <app-starwars-footer-card-list></app-starwars-footer-card-list>
+    <app-starwars-footer-card-list [previous]="previous" [next]="next" (selected)="updateList($event)"></app-starwars-footer-card-list>
 
   </div>
 
