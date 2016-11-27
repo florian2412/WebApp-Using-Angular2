@@ -14,6 +14,7 @@ import {Subscriber} from "rxjs";
 export class StarwarsCharactersListComponent implements OnInit {
 
   private characters: Array<CharacterModel> = new Array();
+  private characterSelected: CharacterModel = null;
   private next: any = null;
   private previous: any = null;
 
@@ -48,7 +49,7 @@ export class StarwarsCharactersListComponent implements OnInit {
   }
 
   private showDetails(character) {
-    console.log(character);
+    this.characterSelected = character;
   }
 
 }
